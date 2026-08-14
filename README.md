@@ -94,7 +94,7 @@ Logs are written under `logs/`.
 
 ## Important CLI Options
 
-Every option has a default in `cli.py`; 
+Every option has a default in `cli.py`.
 
 | Flag | Default | Meaning |
 | --- | --- | --- |
@@ -124,4 +124,4 @@ Compute accuracy with:
 
 ```bash
 python compute_acc.py output/
-```# MedVES
+```
