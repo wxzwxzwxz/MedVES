@@ -3,7 +3,7 @@
 > **TL;DR.** More test-time text is not the same as more visual evidence. MedVES makes a frozen VLM *look again*: it localizes a region, records a neutral visual observation, updates a cumulative visual state, and decides what to inspect next before answering.
 
 <p align="center">
-  <img src="assets/medves_framework.png" width="100%" alt="MedVES framework">
+  <img src="assets/framework.pdf" width="100%" alt="MedVES framework">
 </p>
 
 ## What is MedVES?
