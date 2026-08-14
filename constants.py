@@ -1,0 +1,11 @@
+"""Shared constants."""
+
+from __future__ import annotations
+
+VALID_NEXT_ACTIONS = {"VERIFY_SYMMETRY", "CHECK_ADJACENT_CONTEXT", "REFINE_SUBREGION", "STOP"}
+OVERLAY_MARKER = "Latest overlay image"
+
+QWEN3_VL_PATCH_SIZE = 14
+QWEN3_VL_MERGE_SIZE = 2
+QWEN3_VL_MIN_PIXELS = 4 * 28 * 28
+QWEN3_VL_MAX_PIXELS = 1280 * 28 * 28
