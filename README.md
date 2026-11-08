@@ -1,6 +1,6 @@
 # MedVES: Visual Evidence Scaling at Test Time for VLMs in Medical VQA
 
-> **TL;DR.** More test-time text is not the same as more visual evidence. MedVES makes a frozen VLM *look again*: it localizes a region, records a neutral visual observation, updates a cumulative visual state, and decides what to inspect next before answering.
+> **TL;DR.** More test-time text is not the same as more visual evidence. MedVES makes a frozen VLM *look again*, without additional training: it iteratively localizes regions, records neutral visual observations, and accumulates evidence in a bounded Visual Overlay State (VOS) on the original image, stopping adaptively before answering.
 
 <p align="center">
   <a href="assets/framework.pdf">
@@ -43,10 +43,10 @@ vllm serve Qwen/Qwen3-VL-4B-Instruct \
 
 ## Data
 
-Place the benchmark JSON files under `data_process/Medical_Multimodal_Evaluation_Data_clean/`:
+Place the benchmark JSON files under `data/Medical_Multimodal_Evaluation_Data/`:
 
 ```text
-data_process/Medical_Multimodal_Evaluation_Data_clean/
+data/Medical_Multimodal_Evaluation_Data/
     medical_multimodel_evaluation_data_omni.json
     medical_multimodel_evaluation_data_4dataset.json
 ```
@@ -84,14 +84,6 @@ python run.py --bench omni --use_baseline --workers 32
 python run.py --bench 4dataset --use_baseline --workers 32
 ```
 
-### Run all four settings
-
-```bash
-./run.sh
-```
-
-Logs are written under `logs/`.
-
 ## Important CLI Options
 
 Every option has a default in `cli.py`.
@@ -108,16 +100,16 @@ By default, `--workers` is set to `1`; increasing it (e.g., `--workers 32`) can 
 
 ## Outputs and Evaluation
 
-Results are written to:
+By default, results are written to the following paths (`<benchmark>` is `medical_multimodel_evaluation_data_omni` or `medical_multimodel_evaluation_data_4dataset`). Use `--output_dir` to change the output directory.
 
 ```text
-output/<model>/<benchmark>/results_<run_id>.jsonl
+output/Qwen3-VL-4B-Instruct/<benchmark>/results_<run_id>.jsonl
 ```
 
 Baseline runs use:
 
 ```text
-output/<model>/<benchmark>/results_<run_id>_base.jsonl
+output/Qwen3-VL-4B-Instruct/<benchmark>/results_<run_id>_base.jsonl
 ```
 
 Compute accuracy with:
@@ -125,3 +117,21 @@ Compute accuracy with:
 ```bash
 python compute_acc.py output/
 ```
+
+## Citation
+
+If you find MedVES useful in your research, please cite:
+
+```bibtex
+@inproceedings{wu2026medves,
+  title     = {{MedVES}: Visual Evidence Scaling at Test Time for {VLMs} in Medical {VQA}},
+  author    = {Wu, Xiuzhe and Tan, Haoru and Subramanian, Barathi and Chen, Handi and
+               Peterson, Mitchell Nevin and Guo, Terry and Kiani, Amirhossein and Noh, Songmi and
+               Qi, Xiaojuan and Shen, Jeanne},
+  booktitle = {Proceedings of the 34th ACM International Conference on Multimedia},
+  year      = {2026},
+  doi       = {10.1145/3767308.3836450},
+  url       = {https://doi.org/10.1145/3767308.3836450}
+}
+```
+
