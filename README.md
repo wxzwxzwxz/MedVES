@@ -126,7 +126,7 @@ If you find MedVES useful in your research, please cite:
 
 ```bibtex
 @inproceedings{wu2026medves,
-  title     = {{MedVES}: Visual Evidence Scaling at Test Time for {VLMs} in Medical {VQA}},
+  title     = {MedVES: Visual Evidence Scaling at Test Time for VLMs in Medical VQA},
   author    = {Wu, Xiuzhe and Tan, Haoru and Subramanian, Barathi and Chen, Handi and
                Peterson, Mitchell Nevin and Guo, Terry and Kiani, Amirhossein and Noh, Songmi and
                Qi, Xiaojuan and Shen, Jeanne},
