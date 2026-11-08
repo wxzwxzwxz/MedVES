@@ -1,10 +1,10 @@
 # MedVES: Visual Evidence Scaling at Test Time for VLMs in Medical VQA
 
-> **TL;DR.** More test-time text is not the same as more visual evidence. MedVES makes a frozen VLM *look again*, without additional training: it iteratively localizes regions, records neutral visual observations, and accumulates evidence in a bounded Visual Overlay State (VOS) on the original image, stopping adaptively before answering.
+> **TL;DR.** More test-time text is not the same as more visual evidence. MedVES scales visual evidence at test time with a frozen VLM, without additional training: it iteratively localizes regions, records neutral visual observations, and accumulates evidence in a bounded Visual Overlay State (VOS) on the original image, stopping adaptively before answering.
 
 <p align="center">
-  <a href="assets/framework.pdf">
-    <img src="assets/framework.png" width="100%" alt="MedVES framework">
+  <a href="assets/framework.jpg">
+    <img src="assets/framework.jpg" width="100%" alt="MedVES framework">
   </a>
 </p>
 
