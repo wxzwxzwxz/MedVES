@@ -1,6 +1,6 @@
 # MedVES: Visual Evidence Scaling at Test Time for VLMs in Medical VQA [\[Demo\]](https://wxzwxzwxz.github.io/MedVES-Demo/)
 
-For any questions, please contact [xzwu@stanford.edu](mailto:xzwu@stanford.edu).
+For any questions, please contact xzwu [at] stanford [dot] edu.
 
 > **TL;DR.** More test-time text is not the same as more visual evidence. MedVES scales visual evidence at test time with a frozen VLM, without additional training: it iteratively localizes regions, records neutral visual observations, and accumulates evidence in a bounded Visual Overlay State (VOS) on the original image, stopping adaptively before answering.
 
